@@ -141,7 +141,7 @@ router.get("/types", async (req, res) => {
         }else if (pokeName){ 
             res.status(404).send("El nombre del pokemon ya existe"); 
         } else{
-            Poke.create({ 
+            Pokemon.create({ 
                 name,
                 hp,
                 img,
@@ -155,10 +155,10 @@ router.get("/types", async (req, res) => {
             .then(async (pokemon) => {
                 // Guardo el type
                 const typ = await Type.findAll({
-                    where: { name: type },
+                    where: { name: types },
                 });
                 // Guardo el Dog en el temperamento
-                await pokemon.addTemperament(typ);
+                await pokemon.addType(typ);
                 res.json(pokemon);
             }).catch(err => err)
     
