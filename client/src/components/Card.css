@@ -1,0 +1,72 @@
+.card {
+    width: 250px;
+    height: 320px;
+    border-radius: 20px;
+    background: #e1c443;
+    position: relative;
+    padding: 1.8rem;
+    border: 5px solid #272727;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    font-family: 'TTVTechPrecomput', sans-serif;
+    font-size: 30px;
+    margin: 15px 10px;
+   }
+   
+   .card-details {
+    color: black;
+    height: 100%;
+    display: grid;
+    place-content: center;
+   }
+
+   .card-details img{
+    width: 100px;
+    height: 100px;
+}
+
+.img-game{
+    margin: 0 auto;
+    margin-top: 10px;
+    align-items: center;
+}
+
+   .card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    background-color: #272727;
+    color: #e1c443;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+   }
+
+   
+   .text-body {
+    color: #252422;
+   }
+   
+   /*Text*/
+   .text-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #252422
+   }
+   
+   /*Hover*/
+   .card:hover {
+    box-shadow: 0px 3px 20px 0px black;
+   }
+   
+   .card:hover .card-button {
+    font-family: 'TTVTechPrecomput', sans-serif;
+    font-size: 30px;
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }

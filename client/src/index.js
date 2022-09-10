@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from "react-redux" //permite que los componentes anidados accedan al almacenamiento del store
+import { store } from "./store";//Es Dios lo ve todo tiene todo permite que el estado se actualice por el dispatch
 
-ReactDOM.render(
+ReactDOM.render(//siempre se debe rodear la aplicacion o archivo raiz en provider
+<Provider store={store}>
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+   </Provider>,
   document.getElementById('root')
 );
 
