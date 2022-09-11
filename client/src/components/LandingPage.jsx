@@ -1,24 +1,30 @@
 import React from "react";
 import {Link} from "react-router-dom"
-
+import "./LandingPage.css";
 
 
 //pagina inicial,  boton para ingresar
 
-export default function LandinPage(){ //componente de funcion 
+export default function LandingPage() {
     return (
-        
-        <div className="container_text">
-            <h1 className="title ">Bienvenidos a videogames</h1>
-            <h2 className="title">!A conocer los mejores juegos¡ </h2>
-            <img src="https://www.gratistodo.com/wp-content/uploads/2016/07/22.jpg" alt="" width="600px"height="450px"border="5px"/>
-            <h2 className="title">Busca, conoce  y  encuentra </h2>
-            <Link to ="/home">
-                <button className="button">Hacer clic</button>
+      <div className="container">
+        <div className="textContainer">
+          <div className="bounce">
+            <h1 className="h1">Bienvenido a mi PI de </h1>
+            <span className="letter">P</span>
+            <span className="letter">O</span>
+            <span className="letter">K</span>
+            <span className="letter">E</span>
+            <span className="letter">M</span>
+            <span className="letter">O</span>
+            <span className="letter">N</span>
+            <span className="invisibleLetter">' '</span>
+            <Link to='/home'>
+            <button className="butLanding">INGRESAR</button>
             </Link>
-           
+            <img src="" alt="" />
+          </div>
         </div>
-        
-        
-    )
-}
+      </div>
+    );
+  }

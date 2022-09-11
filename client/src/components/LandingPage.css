@@ -1,69 +1,122 @@
 .container{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    background-image: "https://www.gratistodo.com/wp-content/uploads/2016/09/Pokemon-5.jpg";
-    background-position: center;
+    background-image: url('https://k42.kn3.net/3D7E7A106.jpg');
     background-repeat: no-repeat;
-    background-size: cover;  
+    background-size: cover;
+    background-position: center;
     height: 100vh;
-    font-size: 50px;
-    font-weight: bold;
+    width: auto;
+    font-size: 25px;
+    color:  #ee9910;
+    font-family: 'Mouse Memoirs', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logoLand{
-    width: 700px ;
+.textContainer{
+  text-align: center;
+  margin-bottom: 6em;
+}
+
+.invisibleLetter{
+  visibility: hidden;
+}
+
+.bounce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+	color: rgb(97, 20, 20);
+  height: 100%;
+  white-space: nowrap;
+}
+
+.letter {
+  animation: bounce 0.75s cubic-bezier(0.05, 0, 0.2, 1) infinite alternate;
+  display: inline-block;
+  transform: translate3d(0, 0, 0);
+  margin-top: 0.5em;
+  text-shadow: rgba(14, 156, 175, 0.4) 0 0 0.05em;
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+.letter:nth-of-type(1) {
+  animation-delay: -0.083333333s;
+}
+.letter:nth-of-type(3) {
+  animation-delay: 0.0833333333s;
+}
+.letter:nth-of-type(4) {
+  animation-delay: 0.1666666667s;
+}
+.letter:nth-of-type(5) {
+  animation-delay: 0.25s;
+}
+.letter:nth-of-type(6) {
+  animation-delay: 0.3333333333s;
+}
+.letter:nth-of-type(7) {
+  animation-delay: 0.4166666667s;
 }
 
 
-.tittle{
-    font-family: 'TTVTechPrecomput', sans-serif; 
-    color: #252422;
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: rgba(255, 255, 255, 0.4) 0 0 0.05em;
+  }
+  100% {
+    transform: translate3d(0, -1em, 0);
+    text-shadow: rgba(255, 255, 255, 0.4) 0 1em 0.35em;
+  }
 }
 
-.content{
-    font-family: 'TTVTechPrecomput', sans-serif;
-    color: #252422;
-    padding: 2rem;
+.h1{
+  text-shadow: rgba(255, 255, 255, 0.301) 0 0.1em 0.35em;}
+
+.butLanding {
+    padding: 20px 30px;
+    border: unset;
+    border-radius: 15px;
+    color: #f5f5f8;
+    z-index: 1;
+    background: #625306;
+    position: relative;
+    bottom: -70%;
+    left: 70%;
+    font-weight: 1000;
+    font-size: 25px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+    font-size: 30px;
+    font-weight: lighter;
+   }
+   
+   .butLanding::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    background-color: #dfd73d;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(109, 105, 105, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(100, 97, 97, 0.27);
+    transition: all 250ms
+   }
+   
+.butLanding:hover {
+    color: #e8e8e8;
 }
-
-.btn-land{
-        border-radius: 35px;
-        border: 5px solid #00008B;
-        list-style: none;
-        color:#252422;
-        font-family: 'TTVTechPrecomput', sans-serif;
-        font-weight: bold;
-        padding: 12px 16px;
-        margin: 0 8px;
-        position: relative;
-        cursor: pointer;
-        white-space: nowrap; 
-        padding: 8px 20px;
-        outline: none;
-        cursor: pointer;
-        font-size: 40px;
-        background-color: #FFD700;
-    }
-
-
-.btn-land::before {
-        content: " ";
-        position: absolute;
-        border-radius: 35px;
-        top: 0;
-        left:0;
-        height:100%;
-        width: 100%;
-        z-index:-1;
-        transition: .2s;
-    }
-
-.btn-land:hover {
-        border-color: #0000CD;
-        box-shadow: 0px 3px 20px 0px black;
-        transform: scale(1.2);
-        background-color: #FFD700;
-        color:#252422;
-        transition: all 0.3 ease-out;
+   
+.butLanding:hover::before {
+    width: 100%;
 }
+ 
