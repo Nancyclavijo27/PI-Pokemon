@@ -2,19 +2,19 @@
     width: 250px;
     height: 320px;
     border-radius: 20px;
-    background: #e1c443;
+    background: #0d678a;
     position: relative;
     padding: 1.8rem;
-    border: 5px solid #272727;
+    border: 5px solid #540707;
     transition: 0.5s ease-out;
     overflow: visible;
     font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     margin: 15px 10px;
    }
    
    .card-details {
-    color: black;
+    color: #540707;
     height: 100%;
     display: grid;
     place-content: center;
@@ -49,14 +49,14 @@
 
    
    .text-body {
-    color: #252422;
+    color: #71541a;
    }
    
    /*Text*/
    .text-title {
     font-size: 30px;
     font-weight: bold;
-    color: #252422
+    color: #e8a41e
    }
    
    /*Hover*/

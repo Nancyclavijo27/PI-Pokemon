@@ -59,20 +59,20 @@ export default function reducer(state = initialState, { type, payload }) {
       let sortAlf;
       if (payload === "asc") {
         sortAlf = state.pokemons2.sort((a, b) => {
-          if (a.name.charAt(0) > b.name.charAt(0)) {
+          if (a.name.toLowerCase() > b.name.toLowerCase()) {
             return 1;
           }
-          if (a.name.charAt(0) < b.name.charAt(0)) {
+          if (a.name.toLowerCase() < b.name.toLowerCase()) {
             return -1;
           }
           return 0;
         });
       } else if (payload === "desc") {
         sortAlf = state.pokemons2.sort((a, b) => {
-          if (a.name.charAt(0) > b.name.charAt(0)) {
+          if (a.name.toLowerCase() > b.name.toLowerCase()) {
             return -1;
           }
-          if (a.name.charAt(0) < b.name.charAt(0)) {
+          if (a.name.toLowerCase() < b.name.toLowerCase()) {
             return 1;
           }
           return 0;

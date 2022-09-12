@@ -23,7 +23,7 @@ export default function Card({ id, types, name, img, strength }) {
         </p>
       </div>
       <Link className="por" to={`/pokemons/${id}`}>
-        <button className="card-button">More info</button>
+        <button className="card-button">Mas info</button>
       </Link>
     </div>
   );

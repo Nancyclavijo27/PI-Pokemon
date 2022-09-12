@@ -77,23 +77,23 @@ function handleOrdenByStrength(e) {
 //option value es una istruccion dependiendo su valor toma una accion - siempre el value debe ser igual al de la api
 return (
     <div className="home-container">
- <Link   to="/pokemon">Añadir nuevo pokemon</Link>
- <h1>Busca y conoce a tu mejor amigo</h1>
- <button  className="btn" onClick={e=>{handleClick(e)}}>
+      <h1 className="bounce ">Busca y conoce a tu mejor amigo</h1>
+ <Link className="final"  to="/pokemon">Añadir nuevo pokemon</Link>
+ <button  className="final" onClick={e=>{handleClick(e)}}>
     volver a cargar todos los pokemons
  </button>
 <div className="div-filt">
           <div>
-    <select className="selec" onChange={e=>handleSort(e)}>
-        <option value= "All">Todos</option>  
+    <select className="name-filt" onChange={e=>handleSort(e)}>
+        <option value= "All">Todos ABC</option>  
         <option value= "asc">De la A-Z</option>
         <option value= "desc">De la Z-A</option>                                   
     </select>
             <button className="btn-final">Order</button>
           </div>
           <div>
-   <select className="selec" onChange={e=>handleFilter(e)}>
-       <option value= "All">Todos</option>
+   <select className="name-filt" onChange={e=>handleFilter(e)}>
+       <option value= "All">Todos origen</option>
        <option value= "created">Creados</option>
        <option value= "api">De la api</option>                               
    </select>
@@ -101,8 +101,8 @@ return (
           </div>
 
           <div className="box">
-          <select className="selec"  onChange={(e) => handleOrdenByStrength(e)} >
-          <option value="All">Todos </option>
+          <select className="name-filt"  onChange={(e) => handleOrdenByStrength(e)} >
+          <option value="All">Todos Fuerza </option>
           <option value="min"> Min</option>
           <option value="max"> Max</option>
         </select>
@@ -110,8 +110,8 @@ return (
           </div>
 
           <div className="box">
-        <select className="selec" onChange={(e)=>handleSelect(e)}>
-         <option  value= "All">Types</option>
+        <select className="name-filt" onChange={(e)=>handleSelect(e)}>
+         <option  value= "All">Tipos</option>
             {types.map((tem)=>(
          <option key={tem.id} value={tem.name}>{tem.name}</option>
                     ))}
@@ -119,7 +119,7 @@ return (
         <button className="btn-final" > Filter </button>
           </div>
         </div>
-        <Paginado
+        <Paginado className='paginado'
           pokesPerPage={pokesPerPage}
           allPoke={allPoke?.length}
           paginado={paginado}
@@ -143,8 +143,8 @@ return (
             })
           ) : (
             <div className="div-not-found">
-              <h4>Ups! Pokémon not found</h4>
-              <h5>Try creating a new pokémon</h5>
+              <h4>Ups! Pokemon no encontrado</h4>
+              <h5>Intenta crear un nuevo pokemon</h5>
             </div>
           )}
         </div>
