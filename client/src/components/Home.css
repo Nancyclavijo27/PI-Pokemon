@@ -82,29 +82,29 @@ justify-content: center;
 
 .name-filt{
     color: #660303;
-    background: #747474a4;;
+    background: #747474a4;
     border: 3px solid #5c0d0d;
     border-radius: 15px;
     font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     padding: 10px ;
 }
 
 .div-not-found{
-    border: 3px solid #0000CD;
+    border: 3px solid  #4d0710;
     border-radius: 35px;
     width: 400px;
     height: 300px;
     margin: 30px;
-    background-color: rgba(201, 192, 192, 0.856);
+    background-color:  #0d678a;
     text-align: center;
     font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 40px;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    color:  #1a1b1b;
+    color:  #eba50f;
 }
 
 .btn-final{
@@ -122,7 +122,7 @@ justify-content: center;
     padding: 8px 20px;
     outline: none;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 20px;
     background-color: #FFD700;
 }
 

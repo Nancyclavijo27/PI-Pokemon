@@ -16,17 +16,17 @@ export default function Paginado({
   
 
   return (
-    <nav className="paginado">
-        <ul className="paginado">
+    <nav className="paginated">
+        <ul className="paginated li">
             <button className={ currentPage === 1 ? "disabled" : "enabled" } disabled={currentPage === 1 ? true : false} onClick={() => paginado(currentPage - 1)}>
-                Prev
+            Prev/Pag
             </button>
             {pageNumbers && 
             pageNumbers.map(number =>(        
-               <button onClick = { () => paginado(number)} key={number}>{number}</button>    
+               <button className="num" onClick = { () => paginado(number)} key={number}>{number}</button>    
             )) }
-           <button className={ currentPage === pageNumbers.length ? "disabled" : "enabled" } disabled={currentPage === pageNumbers.length ? true : false} onClick={() => paginado(currentPage + 1)}>
-                Next
+           <button  className={ currentPage === pageNumbers.length ? "disabled" : "enabled" } disabled={currentPage === pageNumbers.length ? true : false} onClick={() => paginado(currentPage + 1)}>
+           Next/Pag
             </button>
         </ul>
     </nav>

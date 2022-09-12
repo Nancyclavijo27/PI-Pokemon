@@ -19,13 +19,13 @@ export default function Search({ setCurrentPage }) {
   return (
     <div>
       <div className="group">
-        <input
+        <input 
           onChange={(e) => {
             setName(e.target.value);
             handleInputChange(e.target.value);
           }}
           type="text"
-          placeholder="Search"
+          placeholder="Buscar"
           className="input"
           value={name}
         />
