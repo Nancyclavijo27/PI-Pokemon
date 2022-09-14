@@ -39,7 +39,7 @@ export default function Detail() {
     );
   } else {
     return (
-      <div className="paginado2">
+      <div className="cardDetalle">
         <div>
           <Link to="/home">
             <button className="botonDetails" onClick={resState}>
@@ -49,19 +49,19 @@ export default function Detail() {
         </div>
         <div>
           <img
-            className="imagdetalle"
+            
             src={pokeDetail[0].img }
             alt={pokeDetail[0].name}
-            width="450px"
-            height="450px"
+            width="200px"
+            height="200px"
           />
         </div>
 
-        <div className="cardDetalle">
-          <div>
+        <div>
+          <div className="base1">
             <h1>{pokeDetail[0].name.toUpperCase()}</h1>
           </div>
-          <div className="base3">
+          <div className="base2">
             <h1>
               Types:{" "}
               {pokeDetail[0].types.map((e) => {

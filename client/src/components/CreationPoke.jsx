@@ -86,7 +86,7 @@ export default function CreatePoke() {
 
     console.log(e.data);
 
-     const a = allPokes.filter((b) => b.name === input.name);
+     const a = allPokes.filter((b) => b.name.toLowerCase() === input.name.toLowerCase());
      if(!input.name ||
       !input.name ||
       !input.hp ||
@@ -99,9 +99,10 @@ export default function CreatePoke() {
       ){
         return alert('Complete los campos vacios.')
       };
-      if (a.length > 0) {
-        return alert("Ya hay un pokemon con ese nombre, prueba otro");
-      }
+      
+        if (a.length > 0) {
+        return alert("El nombre ya se encuenta en uso.");
+        }
       
 
     dispatch(postPoke(input));
@@ -162,7 +163,7 @@ export default function CreatePoke() {
   }
 
   return (
-    <div key="form" className="formPerfil">
+    <div key="form" className="form">
       <div key="up" className="up-things">
         <Link to="/home">
           <button key="up1" className="boton">
@@ -172,17 +173,17 @@ export default function CreatePoke() {
       </div>
       <div key="up45">
         <h1 key="up2" className="titleForm">
-          Create Pokémon
+          Crear Pokemon
         </h1>
       </div>
 
-      <form className="form" onSubmit={(e) => handleSubmit(e)}>
+      <form  onSubmit={(e) => handleSubmit(e)}>
       <p className="info">* : Requerido</p>
         <div key="name8">
           <label key="name" className="title5">
             *Name:
           </label>
-          <input
+          <input className="res"
             key="name2"
             type="text"
             name="name"
@@ -199,7 +200,7 @@ export default function CreatePoke() {
           <label key="Strength" className="title5">
             *Strength:
           </label>
-          <input
+          <input className="res"
             type="number"
             name="strength"
             key="strength2"
@@ -217,7 +218,7 @@ export default function CreatePoke() {
           <label key="defense" className="title5">
             *Defense:
           </label>
-          <input
+          <input className="res"
             type="number"
             name="defense"
             key="defense2"
@@ -235,7 +236,7 @@ export default function CreatePoke() {
           <label key="image" name="img" className="title5">
             Image:
           </label>
-          <input
+          <input className="res"
             key="image2"
             name="img"
             value={input.img}
@@ -247,7 +248,7 @@ export default function CreatePoke() {
           <label key="hp2" className="title5">
             *HP:
           </label>
-          <input
+          <input className="res"
             type="number"
             name="hp"
             key="hp3"
@@ -264,7 +265,7 @@ export default function CreatePoke() {
           <label key="height2" className="title5">
             *Height:
           </label>
-          <input
+          <input className="res"
             type="number"
             name="height"
             key="height3"
@@ -281,7 +282,7 @@ export default function CreatePoke() {
           <label key="weight2" className="title5">
             *Weight:
           </label>
-          <input
+          <input className="res"
             type="number"
             name="weight"
             key="weight3"
@@ -298,7 +299,7 @@ export default function CreatePoke() {
           <label key="speed2" className="title5">
             *Speed:
           </label>
-          <input
+          <input className="res"
             type="number"
             name="speed"
             key="speed3"
@@ -312,32 +313,32 @@ export default function CreatePoke() {
          )}
         </div>
         <div>
-            <label>*Types</label>
-            <select  className="thisInput" onChange={(e) => handleSelectTypes(e)}>
-              <option value="all">All</option>
+            <label className="title5">*Types</label>
+            <select  className="select" onChange={(e) => handleSelectTypes(e)}>
+              <option className="res" value="all">All</option>
               {allTypes?.map((e) => {
                 return (
-                  <option key={e.id} value={e.name}>
+                  <option key={e.id} value={e.name} >
                     {e.name}
                   </option>
                 );
               })}
             </select>
-            {errors.types && <span className="red">{errors.types}</span>}
+            {errors.types && <span className="choosed">{errors.types}</span>}
           </div>
-          <div className="selected">
+          <div>
             {input.types?.map((e) => {
               return (
                 <>
                   <div>{e}</div>
-                  <button onClick={() => handleDelete(e)}>X</button>
+                  <button className="cross" onClick={() => handleDelete(e)}>X</button>
                 </>
               );
             })}{" "}
           </div>
         <div key="button8">
-        <button  type="submit" disabled={Object.keys(errors).length}>
-          Crear Pokemon
+        <button className="btn-createPoke" type="submit" disabled={Object.keys(errors).length}>
+          Crear 
         </button>     
         </div>
         {loading && <Loader />}

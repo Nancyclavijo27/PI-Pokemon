@@ -103,8 +103,8 @@ return (
           <div className="box">
           <select className="name-filt"  onChange={(e) => handleOrdenByStrength(e)} >
           <option value="All">Todos Fuerza </option>
-          <option value="min"> Min</option>
-          <option value="max"> Max</option>
+          <option value="asc"> Max</option>
+          <option value="desc"> Min</option>
         </select>
         <button className="btn-final" > Order </button> 
           </div>
