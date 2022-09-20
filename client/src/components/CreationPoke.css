@@ -229,5 +229,38 @@ display:inline-block;
   background: #1a2433;
 }
 
+.btn {
+  color: #090909;
+  padding: 0.2rem 1.2rem;
+  width: 200px;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #eeeeee62;
+  border: 2px solid #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn_disabled {
+  color: #0909096e;
+  padding: 0.2rem 1.2rem;
+  width: 200px;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #eeeeee62;
+  border: 2px solid #0909096e;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1370px) {
+  .formBox {
+    width: 50%;
+  }
+
+  .inputs input {
+    width: 43%;
+  }
+}
+
 
 

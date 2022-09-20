@@ -15,6 +15,16 @@ export function getPokes() {
   };
 }
 
+ //export function getPokes() {
+    //     return async function(dispatch) {
+    //         var json = await axios.get("http://localhost:3001/pokemons");
+    //         return dispatch({
+    //             type: "GET_POKES",
+    //             payload: json.data
+    //         });
+    //     }
+    // }
+
 export function getTypes() {
   return function (dispatch) {
     axios

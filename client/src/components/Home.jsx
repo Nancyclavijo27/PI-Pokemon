@@ -13,16 +13,16 @@ import "./Home.css";
 export default function Home(){
 
     const dispatch = useDispatch() 
-    const allPoke = useSelector ((state)=>state.pokemons) // trae todo lo que esta en el estado dogs
+    const allPoke = useSelector ((state)=>state.pokemons) // trae todo lo que esta en el estado 
     //para el paginado
     
     const [currentPage,setCurrentPage]= useState(1)
-    const [pokesPerPage, setPokesPerPage] = useState(12)
-    const indexOfLastPoke= currentPage * pokesPerPage
-    const indexOfFirstPoke=indexOfLastPoke- pokesPerPage
-    const currentPokes=allPoke.slice(indexOfFirstPoke,indexOfLastPoke)
+    const [pokesPerPage, setPokesPerPage] = useState(12)//cantidad de pokes por pagina
+    const indexOfLastPoke= currentPage * pokesPerPage // calculo el indice del ultimo peke que se va a mostrar
+    const indexOfFirstPoke=indexOfLastPoke- pokesPerPage // calculo el indice del primer poke que se va a mostrar
+    const currentPokes=allPoke.slice(indexOfFirstPoke,indexOfLastPoke)// obtengo los pokes que se van a mostrar
     
-    const [orden, setOrden]=useState("")//ayuda a renderizar estado local que arranca vacio
+    const [orden, setOrden]=useState("")// guardo el orden en el que se muestran los pokes
     
     //esta constante nos ayuda al renderizado
     const paginado=(pageNumber)=>{
