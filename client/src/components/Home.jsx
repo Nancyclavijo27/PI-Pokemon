@@ -31,9 +31,9 @@ export default function Home(){
     const types =useSelector((state)=>state.types)
 
     useEffect(()=>{ //trae el estado cuando el componente se monta
-        dispatch( getPokes())
+        dispatch( getPokes())// llamo a la action que me interesa
         dispatch((getTypes()))
-    },[dispatch] )
+    },[dispatch] )// [] para que no se ejecute cada vez que se renderiza el componente
 
     // recetea lo que se despacha funcion preventiva
 function handleClick(e){

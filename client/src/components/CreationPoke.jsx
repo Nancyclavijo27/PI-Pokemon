@@ -50,7 +50,10 @@ function validate(input) {
     } else if (!regexStats.test(input.weight.trim())) {
       error.weight = "El campo weight solo acepta números del 0 al 100";
     }
-  
+    if (!input.types[0]){
+      error.types = 'Obligatorio'
+  }
+   
     return error;
   }
 
@@ -108,6 +111,7 @@ export default function CreatePoke() {
       });
     }
   }
+  
 
   function handleDeleteTypes(e) {
    
@@ -160,7 +164,8 @@ export default function CreatePoke() {
 
     history.push("/home");
   }
-  
+
+
   return (
     <div key="form" className="form">
       <div key="up" className="up-things">
@@ -177,9 +182,9 @@ export default function CreatePoke() {
       </div>
 
       <form  onSubmit={(e) => handleSubmit(e)}>
-      <p className="info">* : Requerido</p>
+      <p className="titleForm">* : Requerido</p>
         <div key="name8">
-          <label key="name" className="title5"> *Name:</label>
+          <label key="name" className="titleForm"> *Name:</label>
           <input className="res"
             key="name2"
             type="text"
@@ -189,38 +194,11 @@ export default function CreatePoke() {
             onChange={(e) => handelChange(e)}
             required
           />
-           {error.name && ( <p className="error">{error.name}</p> )}
-        </div>
-        <div key="strength8">
-          <label key="Strength" className="title5"> *Strength: </label>
-          <input className="res"
-            type="number"
-            name="strength"
-            key="strength2"
-            placeholder="Strength"
-            value={input.strength}
-            onChange={(e) => handelChange(e)}
-            required
-          /> 
-          {error.strength && ( <p className="error">{error.strength}</p> )}
-        </div>
-
-        <div key="defense8">
-          <label key="defense" className="title5"> *Defense: </label>
-          <input className="res"
-            type="number"
-            name="defense"
-            key="defense2"
-            placeholder="Defense"
-            value={input.defense}
-            onChange={(e) => handelChange(e)}
-            required
-          />
-          {error.defense && ( <p className="error">{error.defense}</p> )}
+           {error.name && ( <span className="error">{error.name}</span> )}
         </div>
 
         <div key="img8">
-          <label key="image" name="img" className="title5"> Image: </label>
+          <label key="image" name="img" className="titleForm"> Image: </label>
           <input className="res"
             key="image2"
             name="img"
@@ -229,8 +207,34 @@ export default function CreatePoke() {
             onChange={(e) => handelChange(e)}
           ></input>
         </div>
-        <div key="hp8">
-          <label key="hp2" className="title5"> *HP:</label>
+        
+        <div>
+            <label className="titleForm">{" "} *Types: {" "}</label>
+            <select  className="res" onChange={(e) => handleSelectTypes(e)}>
+              <option className="res" value="all">All</option>
+              {allTypes?.map((e) => {
+                return (
+                  <option key={e.id} value={e.name} > {e.name} </option>
+                );
+              })}
+            </select>
+            {error.types && (
+              <span className="error">{error.types}</span>
+            )}
+          </div>
+          <div className="choosed">
+            {input.types?.map((e) => {
+              return (
+                <>
+                  <div>{e}</div>
+                  <button className="cross" onClick={() => handleDeleteTypes(e)}>X</button>
+                </>
+              );
+            })}{" "} 
+             
+          </div>
+          <div key="hp8">
+          <label key="hp2" className="titleForm"> *HP:</label>
           <input className="res"
             type="number"
             name="hp"
@@ -240,10 +244,39 @@ export default function CreatePoke() {
             onChange={(e) => handelChange(e)}
             required
           />
-          {error.hp && ( <p className="error">{error.hp}</p> )}
+          {error.hp && ( <span className="error">{error.hp}</span> )}
         </div>
+        <div key="strength8">
+          <label key="Strength" className="titleForm"> *Strength: </label>
+          <input className="res"
+            type="number"
+            name="strength"
+            key="strength2"
+            placeholder="Strength"
+            value={input.strength}
+            onChange={(e) => handelChange(e)}
+            required
+          /> 
+          {error.strength && ( <span className="error">{error.strength}</span> )}
+        </div>
+
+        <div key="defense8">
+          <label key="defense" className="titleForm"> *Defense: </label>
+          <input className="res"
+            type="number"
+            name="defense"
+            key="defense2"
+            placeholder="Defense"
+            value={input.defense}
+            onChange={(e) => handelChange(e)}
+            required
+          />
+          {error.defense && ( <span className="error">{error.defense}</span> )}
+        </div>
+
+
         <div key="height8">
-          <label key="height2" className="title5">*Height: </label>
+          <label key="height2" className="titleForm">*Height: </label>
           <input className="res"
             type="number"
             name="height"
@@ -253,10 +286,10 @@ export default function CreatePoke() {
             onChange={(e) => handelChange(e)}
             required
           />
-          {error.height && ( <p className="error">{error.height}</p> )}
+          {error.height && ( <span className="error">{error.height}</span> )}
         </div>
         <div key="weight8">
-          <label key="weight2" className="title5"> *Weight:</label>
+          <label key="weight2" className="titleForm"> *Weight:</label>
           <input className="res"
             type="number"
             name="weight"
@@ -266,10 +299,10 @@ export default function CreatePoke() {
             onChange={(e) => handelChange(e)}
             required
           />
-          {error.weight && ( <p className="error">{error.weight}</p> )}
+          {error.weight && ( <span className="error">{error.weight}</span> )}
         </div>
         <div key="speed8">
-          <label key="speed2" className="title5">*Speed:</label>
+          <label key="speed2" className="titleForm">*Speed:</label>
           <input className="res"
             type="number"
             name="speed"
@@ -279,46 +312,23 @@ export default function CreatePoke() {
             onChange={(e) => handelChange(e)}
             required
           />
-          {error.speed && ( <p className="error">{error.speed}</p> )}
+          {error.speed && ( <span className="error">{error.speed}</span> )}
         </div>
-        <div>
-            <label className="title5">{" "}*Types:{" "}</label>
-            <select  className="select" onChange={(e) => handleSelectTypes(e)}>
-              <option className="res" value="all">All</option>
-              {allTypes?.map((e) => {
-                return (
-                  <option key={e.id} value={e.name} > {e.name} </option>
-                );
-              })}
-            </select>
-            {error.types && <p className="error">{error.types}</p>}
+        
+         
+        {Object.keys(error).length ? (
+          <div >
+            <button type="submit" disabled={true} className="btn-createPoke">
+              Crear
+            </button>
           </div>
+        ) : (
           <div>
-            {input.types?.map((e) => {
-              return (
-                <>
-                  <div>{e}</div>
-                  <button className="cross" onClick={() => handleDeleteTypes(e)}>X</button>
-                </>
-              );
-            })}{" "} 
+            <button type="submit" className="btn-createPoke">
+              Crear
+            </button>
           </div>
-
-
-          {Object.keys(error).length ? (
-             <div >
-             <button type="submit" disabled={true} className="btn_disabled">
-               Crear
-             </button>
-           </div>
-         ) : (
-           <div>
-             <button type="submit" className="btn">
-               Crear
-             </button>
-           </div>
-          )}
-      
+        )}
       </form>
     </div>
   );

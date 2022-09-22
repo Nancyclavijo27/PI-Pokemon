@@ -12,12 +12,12 @@ export default function Detail() {
   const dispatch = useDispatch();
   console.log(pokeDetail);
 
-  useEffect(() => {
+  useEffect(() => {//Lo que pasa la primera vez que se monta componentDitMount
     dispatch(getDetail(id));
-    return () => {
-      dispatch(resState());
+    return () => {//lo  que pasa cuando se desmonta componentDitUpdate
+      dispatch(resState());//limpia el estado
     };
-  }, [dispatch, id]);
+  }, [dispatch, id]);//escucha y actualiza los cambios componentDitDisMount
 
   if (Object.keys(pokeDetail).length === 0) {
     console.log(pokeDetail.types);

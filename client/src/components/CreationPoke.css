@@ -8,20 +8,21 @@
     align-items: center;
     border: 3px solid #840516;
     border-radius: 35px;
-    width: 800px;
-    height: 700px;
+    width: 900px;
     margin:auto;
     background-color: rgba(201, 192, 192, 0.856);
     font-family: 'TTVTechPrecomput', sans-serif;
     color:  #1a1b1b;
   }
   
+  
   .titleForm{
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  color:  #6f1723;
-  font-weight: bold;
+  
+    
+      width:300px;
+    font-weight:bold;
+    display:inline-block;
+   
   }
   
 
@@ -78,28 +79,12 @@
   }
 
   .choosed {
-    background-color: rgba(54, 54, 54, 0.8);
-    width: 650px;
-    height: 100px;
-    padding: 0rem;
-    border-radius: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow-x: auto;
+    background-color: rgba(201, 192, 192, 0.856);;
+    
+    
   }
 
   
-  .choosed::-webkit-scrollbar {
-    width: 1rem;
-    background-color: #FFD700;
-  }
-
-  .choosed::-webkit-scrollbar-thumb {
-    background-color: #252422;
-    border-radius: 10px;
-  }
-
  .card98 {
     width: 5rem;
     height: 2.5rem;
@@ -190,7 +175,7 @@ display:inline-block;
 }
 
 .error{
-  color: rgb(36, 45, 81);
+  color: rgb(81, 65, 36);
   text-shadow: 2px 4px 10px black;
   margin-top: -2%;
   margin-bottom: 1%;
@@ -229,38 +214,6 @@ display:inline-block;
   background: #1a2433;
 }
 
-.btn {
-  color: #090909;
-  padding: 0.2rem 1.2rem;
-  width: 200px;
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #eeeeee62;
-  border: 2px solid #000000;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn_disabled {
-  color: #0909096e;
-  padding: 0.2rem 1.2rem;
-  width: 200px;
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #eeeeee62;
-  border: 2px solid #0909096e;
-  cursor: not-allowed;
-}
-
-@media (max-width: 1370px) {
-  .formBox {
-    width: 50%;
-  }
-
-  .inputs input {
-    width: 43%;
-  }
-}
 
 
 

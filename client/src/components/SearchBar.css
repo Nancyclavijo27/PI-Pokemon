@@ -1,18 +1,16 @@
 .group {
     position: relative;
-    color: #55060e;
    }
    
    .input {
-    font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 30px;
-    color: #b11111;
+    font-size: 16px;
     padding: 10px 10px 10px 5px;
     display: block;
     width: 200px;
     border: none;
-    border-bottom: 1px solid #510404;
-    background: transparent;
+    border-bottom: 1px solid #b1133d;
+    background: #0d678a;
+    color: #e1c443;
    }
    
    .input:focus {
