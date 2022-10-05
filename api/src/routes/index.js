@@ -8,9 +8,11 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
+
+//------------------------------ Functiones --------------------------------------------------------\\
 const getApiPoke = async (url) => {
     try {
-      // aca me traigo los primeros 40 pokemones, sino explota todo y la peticion se hace larguisima
+      // aca me traigo los primeros 40 pokemones
       const apiResults = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
       const apiNext = await axios.get(apiResults.data.next);
       const allPokemons = apiResults.data.results.concat(apiNext.data.results);
@@ -101,9 +103,12 @@ const getApiPoke = async (url) => {
     }
   };
 
+  //------------------------------ Rutas --------------------------------------------------------\\
+
+
   // aqui rutas solicitadas
   router.get("/pokemons", async (req, res) =>{ 
-    const name = req.query.name 
+    const name = req.query.name // ej: "/pokemons?gta"
     const pokesTotales = await allPoke()//trae todos los pekes
     if(name){ //pregunta si hay un name por query
         let pokesName = await pokesTotales.filter(ele => ele.name.toLowerCase().includes(name.toLowerCase()))
@@ -111,7 +116,7 @@ const getApiPoke = async (url) => {
         res.status(200).send(pokesName):
         res.status(404).send("No esta disponible");
     }else{   
-        res.status(200).send(pokesTotales)//si no hay un query envia los perros totales
+        res.status(200).send(pokesTotales)//si no hay un query envia los pokes totales
     }
 })//quiero guardar solo los tipos en la bd y dejarlas listas para cada vez
 
