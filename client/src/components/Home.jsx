@@ -16,13 +16,14 @@ export default function Home(){
     const allPoke = useSelector ((state)=>state.pokemons) // trae todo lo que esta en el estado 
     //para el paginado
     
-    const [currentPage,setCurrentPage]= useState(1)
+    const [currentPage,setCurrentPage]= useState(1) //pagina actual
     const [pokesPerPage, setPokesPerPage] = useState(12)//cantidad de pokes por pagina
     const indexOfLastPoke= currentPage * pokesPerPage // calculo el indice del ultimo peke que se va a mostrar
     const indexOfFirstPoke=indexOfLastPoke- pokesPerPage // calculo el indice del primer poke que se va a mostrar
     const currentPokes=allPoke.slice(indexOfFirstPoke,indexOfLastPoke)// obtengo los pokes que se van a mostrar
-    
+    const [charge, setCharge] = useState(false);//para cuando busca por un pokemon que no tiene tipo entre los 40 traidos
     const [orden, setOrden]=useState("")// guardo el orden en el que se muestran los pokes
+    
     
     //esta constante nos ayuda al renderizado
     const paginado=(pageNumber)=>{
@@ -31,6 +32,10 @@ export default function Home(){
     const types =useSelector((state)=>state.types)
 
     useEffect(()=>{ //trae el estado cuando el componente se monta
+      setCharge(true);
+      setTimeout(() => {
+        setCharge(false);
+      }, 10000);
         dispatch( getPokes())// llamo a la action que me interesa
         dispatch((getTypes()))
     },[dispatch] )// [] para que no se ejecute cada vez que se renderiza el componente

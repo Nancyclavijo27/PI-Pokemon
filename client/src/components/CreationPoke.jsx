@@ -51,7 +51,7 @@ function validate(input) {
       error.weight = "El campo weight solo acepta números del 0 al 100";
     }
     if (!input.types[0]){
-      error.types = 'Obligatorio'
+      error.types = "Se requiere un tipo mínimo y maximo 3"
   }
    
     return error;

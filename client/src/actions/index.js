@@ -4,7 +4,7 @@ import axios from "axios";
 export function getPokes() {
   return function (dispatch) {
     axios
-      .get("http://localhost:3001/pokemons")
+      .get("/pokemons")
       .then((res) => {
         return dispatch({
           type: "GET_POKES",
@@ -28,7 +28,7 @@ export function getPokes() {
 export function getTypes() {
   return function (dispatch) {
     axios
-      .get("http://localhost:3001/types")
+      .get("/types")
       .then((res) => {
         return dispatch({
           type: "GET_ALL_TYPES",
@@ -49,7 +49,7 @@ export function getName(name) {
 export function getDetail(id){//funcion detallee
   return async function (dispatch) {
       try {
-          var json = await axios.get("http://localhost:3001/pokemons/" + id);
+          var json = await axios.get("/pokemons/" + id);
           return dispatch ({
               type: "GET_DETAILS",
               payload: json.data
@@ -63,7 +63,7 @@ export function getDetail(id){//funcion detallee
 
 export function postPoke(payload) {
   return async function () {
-    const create = await axios.post("http://localhost:3001/pokemons", payload);
+    const create = await axios.post("/pokemons", payload);
     return create;
   };
 }

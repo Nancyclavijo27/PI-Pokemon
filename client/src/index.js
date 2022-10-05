@@ -5,6 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux" //permite que los componentes anidados accedan al almacenamiento del store
 import { store } from "./store";//Es Dios lo ve todo tiene todo permite que el estado se actualice por el dispatch
+import axios from "axios"
+import dotenv from "dotenv"
+dotenv.config();
+
+axios.defaults.baseURL=process.env.REACT_APP_API  || "http://localhost:3001";
 
 ReactDOM.render(//siempre se debe rodear la aplicacion o archivo raiz en provider
 <Provider store={store}>

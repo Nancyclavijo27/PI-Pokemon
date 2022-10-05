@@ -1,12 +1,7 @@
 import React from "react";
 import "./Paginado.css";
 
-export default function Paginado({
-  pokesPerPage,
-  allPoke,
-  paginado,
-  currentPage,
-}) {
+export default function Paginado({ pokesPerPage, allPoke, paginado, currentPage,}) {
   const pageNumbers = [];
 
   for (let i = 0; i <= Math.ceil(allPoke / pokesPerPage) - 1; i++) {
